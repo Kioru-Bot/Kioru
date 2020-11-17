@@ -27,6 +27,6 @@ node .
     "successfully": "#8dc891"
   },
   "version": "1.0.0",
-  "copy": "Kioru Bot | Все права undefined..."
+  "copy": "Kiuru Bot | Все права undefined..."
 }
 ```
