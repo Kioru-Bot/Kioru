@@ -1,1 +1,1 @@
-# Kiuru-Bot
+# Kiuru Bot
