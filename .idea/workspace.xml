@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="21a7c131-ae31-45b5-8d32-1f6951580b3c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1kQBBPMt3Qvh2G8VDQSwbonhbwf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.19.4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="AtomConfig" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="21a7c131-ae31-45b5-8d32-1f6951580b3c" name="Default Changelist" comment="" />
+      <created>1605622804693</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605622804693</updated>
+      <workItem from="1605622805810" duration="1210000" />
+      <workItem from="1605624072381" duration="18511000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="823" y="426" key="FileChooserDialogImpl" timestamp="1605623205491">
+      <screen x="0" y="0" width="1618" height="1050" />
+    </state>
+    <state x="823" y="426" key="FileChooserDialogImpl/0.0.1618.1050@0.0.1618.1050" timestamp="1605623205491" />
+    <state x="294" y="169" key="SettingsEditor" timestamp="1605624299466">
+      <screen x="0" y="0" width="1618" height="1050" />
+    </state>
+    <state x="294" y="169" key="SettingsEditor/0.0.1618.1050@0.0.1618.1050" timestamp="1605624299466" />
+    <state x="461" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605628874423">
+      <screen x="0" y="0" width="1618" height="1050" />
+    </state>
+    <state x="461" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1618.1050@0.0.1618.1050" timestamp="1605628874423" />
+    <state x="562" y="396" width="965" height="553" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1605623215361">
+      <screen x="0" y="0" width="1618" height="1050" />
+    </state>
+    <state x="562" y="396" width="965" height="553" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1618.1050@0.0.1618.1050" timestamp="1605623215361" />
+  </component>
+</project>

@@ -1,6 +1,7 @@
 ![LogoKioru](https://github.com/Kioru-Bot/Kiuru-Bot/blob/main/KioruLogo.png)
 # Kiuru Bot
-Мультифункциональный бот для вашего сервера!
+
+Мультифункциональный Discord бот для вашего прекрасного сервера!
 
 # Установка
 Вписываем эти комманды в git терминал <br>
@@ -30,3 +31,5 @@ node .
   "copy": "Kiuru Bot | Все права undefined..."
 }
 ```
+
+
