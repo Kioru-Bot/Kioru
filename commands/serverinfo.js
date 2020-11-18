@@ -3,7 +3,7 @@ const config = require("../config.json")
 
 module.exports = {
     name: "serverinfo",
-    module: "Информация",
+    category: 'Информация',
     description: "Информация про сервер",
     aliases: ["сервер", "серверинфо", "server"],
     usage: "serverinfo",

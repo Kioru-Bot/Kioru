@@ -20,6 +20,7 @@ module.exports = {
         try {
             if(!args[0]) {
                 for (const module in client.modules) {
+                    console.log(client.modules)
                     const module1 = client.modules[module];
                     let commands = '';
                     for (const command of module1 ) {
