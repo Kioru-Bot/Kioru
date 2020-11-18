@@ -3,14 +3,6 @@ const db = require("../utils/database")
 const config = require("../config.json")
 const cf = require('../utils/commandFinder')
 
-function permissions(command, lang = "ru") {
-    const {props} = require("../Assets/translation/ru.json");
-    const translations = props[`kioru.${lang}.permissions`];
-    const permission = command.permissions;
-    if (!permission) return "";
-    return `**Права для запуска команды**: ${(permission.map(el => "`" + translations[el] + "`").join(" ")).toLowerCase()}`;
-}
-
 module.exports = {
     name: "help",
     description: "Это сообщение",
