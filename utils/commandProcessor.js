@@ -35,6 +35,9 @@ module.exports = async (message, client) => {
         let num = 0;
         for (const perm of command.permissions) {
             num = num | Discord.Permissions.FLAGS[perm];
+            if (!message.guild.me.permissions.has(num)) {
+                return message.reply(`мне нужны \`${perm}\` права чтоб выполнить вашу комманду!`)
+            }
         }
         if (!message.member.permissions.has(num)) {
             if (!message.member.hasPermission("ADMINISTRATOR")) {
