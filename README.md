@@ -9,9 +9,10 @@
 git clone https://github.com/Kioru-Bot/Kiuru-Bot
 npm install
 ```
-<br> На данный момент Docker-а нету, по этому запуск производится обычной командой
+<br> На вашем сервере должен быть установлен Docker
 ```bash
-node .
+docker-compose build
+docker-compose up
 ```
 
 # Настройка конфига
