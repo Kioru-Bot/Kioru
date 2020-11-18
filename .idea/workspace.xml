@@ -27,9 +27,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21a7c131-ae31-45b5-8d32-1f6951580b3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/events/automoderation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +74,7 @@
       <updated>1605622804693</updated>
       <workItem from="1605622805810" duration="1210000" />
       <workItem from="1605624072381" duration="18511000" />
-      <workItem from="1605684552098" duration="19085000" />
+      <workItem from="1605684552098" duration="19576000" />
     </task>
     <servers />
   </component>
@@ -105,6 +105,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="526" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605707125739">
+      <screen x="0" y="0" width="1618" height="1050" />
+    </state>
+    <state x="526" y="325" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1618.1050@0.0.1618.1050" timestamp="1605707125739" />
     <state x="538" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605686379249">
       <screen x="0" y="0" width="1618" height="1050" />
     </state>
