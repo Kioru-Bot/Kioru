@@ -14,7 +14,7 @@ const client = new Discord.Client()
 client.commands = new Discord.Collection();
 client.modules = {};
 
-console.log(chalk.blue(fs.readFileSync("./assets/banner.txt").toString() + "\n"));
+console.log(chalk.blue(fs.readFileSync("./Assets/banner.txt").toString() + "\n"));
 
 require("./utils/commandsLoader")(client);
 

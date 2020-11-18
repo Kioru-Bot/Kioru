@@ -24,6 +24,10 @@ module.exports = {
             Использование ОЗУ - ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(1)} Мб.
             Аптайм - ${Math.round(client.uptime / 60000)} минут
             `, false)
+            .addField("Ссылки", `
+            [Сервер Сообщества](https://discord.gg/cT8fK6Y5hc)
+            Сайт (В разработке)
+            `, false)
             .setFooter(config.copy)
         await message.channel.send(embed)
     }
