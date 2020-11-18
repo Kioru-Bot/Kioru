@@ -5,7 +5,7 @@ const Discord = require("discord.js");
 
 module.exports = {
     name: "userinfo",
-    module: "Информация",
+    category: 'Информация',
     description: "Информация про юзера",
     aliases: ["юзер", "юзеринфо", "user"],
     usage: "userinfo",
@@ -56,7 +56,7 @@ module.exports = {
             .setAuthor("Информация про пользователя")
             .setDescription(
                 await db.get(
-                    `${message.guild.id}_${user.user.id}`,
+                    `${message.guild.id}||${user.user.id}`,
                     "bio",
                     "Пользователь не указал информацию о себе",
                 ),
@@ -70,7 +70,7 @@ module.exports = {
                 }`,
             })
             .setFooter(`ID: ${user.id}`)
-            .setThumbnail(user.user.avatarURL());
+            .setThumbnail(user.user.avatarURL({dynamic: true, size: 1024}));
         message.channel.send(embed);
     },
 };

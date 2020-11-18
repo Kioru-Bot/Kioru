@@ -3,7 +3,7 @@ const getMember = require("../utils/getMember.js");
 module.exports = {
     name: "kick",
     hidden: false,
-    module: "Модерация",
+    category: "Модерация",
     description: "Кикнуть участника",
     aliases: ["кик"],
     usage: "kick <юзер> [причина]",

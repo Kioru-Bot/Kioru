@@ -27,9 +27,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21a7c131-ae31-45b5-8d32-1f6951580b3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/commands/serverinfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commands/userinfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/automoderation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +47,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kQBBPMt3Qvh2G8VDQSwbonhbwf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -72,7 +74,7 @@
       <updated>1605622804693</updated>
       <workItem from="1605622805810" duration="1210000" />
       <workItem from="1605624072381" duration="18511000" />
-      <workItem from="1605684552098" duration="8663000" />
+      <workItem from="1605684552098" duration="19085000" />
     </task>
     <servers />
   </component>

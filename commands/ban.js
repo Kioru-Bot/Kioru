@@ -36,7 +36,7 @@ module.exports = {
     },
 
 
-    module: "Модерация",
+    category: "Модерация",
     description: "Забанить пользователя",
     usage: "ban <юзер> [причина]",
     aliases: ["бан"],
