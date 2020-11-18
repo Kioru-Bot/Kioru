@@ -111,7 +111,7 @@ module.exports = client => {
         const embed = new Discord.MessageEmbed()
             .setAuthor("Выдано предупреждение")
             .setDescription(`${warn.reason}`)
-            .setFooter(`ID ${warn.id} | Модератором ${warn.moderator.user.id}`)
+            .setFooter(`ID ${warn.id} | Модератором ${warn.moderator.tag} (${warn.moderator.id})`)
             .addField("Участник:", warn.user.toString() + " | " + warn.user.user.id)
             .setColor(config.colors.main)
             .setTimestamp();
@@ -119,15 +119,15 @@ module.exports = client => {
     });
 
     client.on("kioru_unwarn", async (warn) => {
-        const getID = await db.get(`${warn.member.guild.id}`, "guild_settings_logs");
-        const logChannel = warn.member.guild.channels.cache.get(getID);
+        const getID = await db.get(`${warn.user.guild.id}`, "guild_settings_logs");
+        const logChannel = warn.user.guild.channels.cache.get(getID);
 
         if (!logChannel) return;
 
         const embed = new Discord.MessageEmbed()
             .setAuthor("Снято предупреждение")
             .setFooter(`ID ${warn.id} | Модератором ${warn.moderator.user.id}`)
-            .addField("Участник:", warn.member.toString() + " | " + warn.member.user.id)
+            .addField("Участник:", warn.user.tag + " | " + warn.user.user.id)
             .setColor(config.colors.main)
             .setTimestamp();
         logChannel.send(embed);

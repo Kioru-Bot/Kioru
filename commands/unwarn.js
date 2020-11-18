@@ -31,9 +31,9 @@ module.exports = {
         if (check.length === 0) return message.channel.send("Неправильный айди предупреждения!");
 
         const final = warns.filter((el) => el.id !== args[1]);
-
+        let user = member
         return db.set(`${message.guild.id}||${member.user.id}`, "users_warns", final)
             .then(() => message.react("✅"))
-            .then(() => client.emit("kioru_unwarn", { id: args[0], moderator: message.member, member }));
+            .then(() => client.emit("kioru_unwarn", { id: args[0], moderator: message.member, user }));
     }
 }

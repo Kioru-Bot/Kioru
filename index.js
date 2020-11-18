@@ -39,6 +39,9 @@ const launchedTime = new Date();
 
 console.log(chalk.gray(`[Kioru Boot] Bot booted in ${launchedTime - launchTime}ms`));
 
+
+require("./events/logs")(client)
+
 client.login(config.token).then(() => {
     console.log(chalk.gray(`[Kioru] started and ready to go in ${new Date() - launchTime}ms`))
 });

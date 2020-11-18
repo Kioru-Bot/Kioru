@@ -46,7 +46,7 @@ module.exports = {
             .then(() => message.react("✅"))
             .then(() =>
                 client.emit("kioru_warn", {
-                    moderator: message.author.id,
+                    moderator: message.author,
                     reason,
                     id: randomId(),
                     date: new Date(),
