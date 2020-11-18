@@ -27,8 +27,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21a7c131-ae31-45b5-8d32-1f6951580b3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/events/automoderation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/botinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/botinfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +65,21 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RunManager">
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -74,7 +90,8 @@
       <updated>1605622804693</updated>
       <workItem from="1605622805810" duration="1210000" />
       <workItem from="1605624072381" duration="18511000" />
-      <workItem from="1605684552098" duration="19085000" />
+      <workItem from="1605684552098" duration="19576000" />
+      <workItem from="1605714957466" duration="3605000" />
     </task>
     <servers />
   </component>
@@ -103,8 +120,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="526" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605707125739">
+      <screen x="0" y="0" width="1618" height="1050" />
+    </state>
+    <state x="526" y="325" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1618.1050@0.0.1618.1050" timestamp="1605707125739" />
     <state x="538" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605686379249">
       <screen x="0" y="0" width="1618" height="1050" />
     </state>
