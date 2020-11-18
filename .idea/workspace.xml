@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/dev" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="21a7c131-ae31-45b5-8d32-1f6951580b3c" name="Default Changelist" comment="" />
+    <list default="true" id="21a7c131-ae31-45b5-8d32-1f6951580b3c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/translation/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/translation/ru.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/help.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/help.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/commandProcessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/commandProcessor.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +43,9 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kQBBPMt3Qvh2G8VDQSwbonhbwf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -27,7 +60,7 @@
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.4" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="AtomConfig" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -40,28 +73,60 @@
       <updated>1605622804693</updated>
       <workItem from="1605622805810" duration="1210000" />
       <workItem from="1605624072381" duration="18511000" />
+      <workItem from="1605684552098" duration="3507000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="823" y="426" key="FileChooserDialogImpl" timestamp="1605623205491">
+    <state x="538" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605686379249">
       <screen x="0" y="0" width="1618" height="1050" />
     </state>
-    <state x="823" y="426" key="FileChooserDialogImpl/0.0.1618.1050@0.0.1618.1050" timestamp="1605623205491" />
-    <state x="294" y="169" key="SettingsEditor" timestamp="1605624299466">
+    <state x="538" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1618.1050@0.0.1618.1050" timestamp="1605686379249" />
+    <state x="823" y="426" key="FileChooserDialogImpl" timestamp="1605684723602">
       <screen x="0" y="0" width="1618" height="1050" />
     </state>
-    <state x="294" y="169" key="SettingsEditor/0.0.1618.1050@0.0.1618.1050" timestamp="1605624299466" />
+    <state x="823" y="426" key="FileChooserDialogImpl/0.0.1618.1050@0.0.1618.1050" timestamp="1605684723602" />
+    <state x="294" y="169" key="SettingsEditor" timestamp="1605684736473">
+      <screen x="0" y="0" width="1618" height="1050" />
+    </state>
+    <state x="294" y="169" key="SettingsEditor/0.0.1618.1050@0.0.1618.1050" timestamp="1605684736473" />
     <state x="461" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605628874423">
       <screen x="0" y="0" width="1618" height="1050" />
     </state>
     <state x="461" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1618.1050@0.0.1618.1050" timestamp="1605628874423" />
-    <state x="562" y="396" width="965" height="553" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1605623215361">
+    <state x="562" y="396" width="965" height="553" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1605684734990">
       <screen x="0" y="0" width="1618" height="1050" />
     </state>
-    <state x="562" y="396" width="965" height="553" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1618.1050@0.0.1618.1050" timestamp="1605623215361" />
+    <state x="562" y="396" width="965" height="553" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1618.1050@0.0.1618.1050" timestamp="1605684734990" />
+    <state x="472" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1605685985495">
+      <screen x="0" y="0" width="1618" height="1050" />
+    </state>
+    <state x="472" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1618.1050@0.0.1618.1050" timestamp="1605685985495" />
   </component>
 </project>

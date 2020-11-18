@@ -1,5 +1,5 @@
 {
-  "_namespace": "kiori.ru.permissions",
+  "_namespace": "kioru.ru.permissions",
   "ADMINISTRATOR": "Администратор",
   "CREATE_INSTANT_INVITE": "Создавать приглашения",
   "KICK_MEMBERS": "Выгонять участников",
