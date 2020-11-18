@@ -21,6 +21,7 @@ module.exports = {
         const user = message.guild.members.cache.get(userId);
 
         if (!user) return await (message.reply("Укажите участника!"));
+        if (user.id === message.author.id) return message.reply('суицид - не выход')
 
         const reason = args.slice(1).join(" ");
 
