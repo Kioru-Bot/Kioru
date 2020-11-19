@@ -22,6 +22,7 @@ module.exports = {
 
         if (!user) return await (message.reply("Укажите участника!"));
         if (user.id === message.author.id) return message.reply('суицид - не выход')
+        if (user.id === client.user.id) return message.reply('нет.........')
 
         const reason = args.slice(1).join(" ");
 
