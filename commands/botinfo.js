@@ -15,7 +15,7 @@ module.exports = {
             .setTitle("Информация о боте")
             .setDescription("Здесь вы сможете увидеть информацию о боте Kioru")
             .setThumbnail("https://img.icons8.com/cotton/2x/info--v1.png")
-            .addField("Версии:", `Kioru - ${config.version}\nNode.js - ${process.version.slice(1)}\nDiscord.js - ${Discord.version}`, true)
+            .addField("Версии:", `Kioru - ${config.version}\nNode.js - ${process.version}\nDiscord.js - ${Discord.version}`, true)
             .addField("Создатели", "EnotKEK3#3100", true)
             .addField("Статистика", `
             Всего серверов - ${client.guilds.cache.size}

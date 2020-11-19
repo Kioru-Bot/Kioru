@@ -46,6 +46,41 @@ module.exports = {
     },
 
     /**
+     * Получить значение мута
+     *
+     * @template defType
+     *
+     * @param {string} id айди
+     * @param {string} key поле
+     * @param {defType} def значение по умолчанию
+     *
+     * @returns {Promise<defType>}
+     */
+    async getmute(id, key, def) {
+        if (!cache[key]) {
+            cache[key] = new keyv(config.cache, { namespace: key });
+        }
+
+        const client = await clientprom;
+
+        const fromCache = await (cache[key].get(`${id}_${key}`));
+
+        if (fromCache) {
+            return fromCache;
+        }
+
+        const collection = client.db("kioru").collection(key);
+
+        const toBeCached = await (collection.findOne({id: `${id}`}));
+        if (!toBeCached) {
+            return def;
+        }
+
+        await (cache[key].set(`${id}`, toBeCached.value));
+        return toBeCached;
+    },
+
+    /**
      * Установка значения в БД
      *
      * @template T
@@ -67,6 +102,56 @@ module.exports = {
         collection.updateOne({ id }, { $set: { value } }, { upsert: true });
 
         return await (cache[key].set(`${id}`, value));
+    },
+
+    /**
+     * Установка мута
+     *
+     * @template T
+     *
+     * @param {string} id айди
+     * @param {string} key поле
+     * @param {T} uid значение id юзера
+     * @param {T} time значение времени
+     *
+     * @returns {Promise<T>}
+     */
+    async setmute(id, key, uid, time) {
+        if (!cache[key]) {
+            cache[key] = new keyv(config.cache, { namespace: key });
+        }
+
+        const client = await clientprom;
+        const collection = client.db("kioru").collection(key);
+
+        collection.updateOne({ id }, { $set: { uid, time } }, { upsert: true });
+
+        return await (cache[key].set(`${id}`, uid, time));
+    },
+
+    /**
+     * Снятие мута
+     *
+     * @template T
+     *
+     * @param {string} id айди
+     * @param {string} key поле
+     * @param {T} uid значение id юзера
+     * @param {T} time значение времени
+     *
+     * @returns {Promise<T>}
+     */
+    async unmute(id, key, uid, time) {
+        if (!cache[key]) {
+            cache[key] = new keyv(config.cache, { namespace: key });
+        }
+        time = 0
+        const client = await clientprom;
+        const collection = client.db("kioru").collection(key);
+
+        collection.updateOne({ id }, { $set: { uid, time } }, { upsert: true });
+
+        return await (cache[key].set(`${id}`, uid, time));
     },
 
     /**

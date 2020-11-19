@@ -5,6 +5,7 @@ const fs = require("fs");
 const Discord = require("discord.js")
 const chalk = require("chalk")
 const commandProcessor = require("./utils/commandProcessor")
+const db = require("./utils/database")
 
 // Config
 const config = require("./config.json")
@@ -21,11 +22,40 @@ require("./utils/commandsLoader")(client);
 client.once('ready', () => {
     console.log(chalk.cyan(`[Kioru] logged in to Discord as ${client.user.tag} [${client.user.id}]`));
     client.user.setActivity('Wildways', { type: 'LISTENING' });
+    client.setInterval(async () => {
+        for (let i of client.guilds.cache.map(guild => guild.id)) {
+            try {
+                let x = await db.getmute(`${i}`, "users_mute", [])
+                if (Date.now() > x.time) {
+                    if (x.time <= 0) return
+                    const g = client.guilds.cache.get(i)
+                    let member = g.members.cache.get(x.uid)
+                    let mutedRole = g.roles.cache.find(mR => mR.name === "Kioru_Muted");
+                    db.unmute(`${i}`, "users_mute", x.uid, 0).then(
+                        member.roles.remove(mutedRole),
+                    )
+                }
+            }
+            catch (e) {
+                console.log(e)
+            }
+        }
+    }, 5000);
 })
 
 
 client.on("message", async (message) => {
     await commandProcessor(message, client);
+    for (let i of client.guilds.cache.map(guild => guild.id)) {
+        try {
+            const g = client.guilds.cache.get(i)
+            let mutedRole = g.roles.cache.find(mR => mR.name === "Kioru_Muted");
+            if(message.member.roles.cache.find(r => r.name === "Kioru_Muted")) return message.delete()
+        }
+        catch (e) {
+            console.error(e)
+        }
+    }
 });
 
 client.on("warn", console.warn)
