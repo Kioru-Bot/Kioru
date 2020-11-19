@@ -27,16 +27,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21a7c131-ae31-45b5-8d32-1f6951580b3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/commands/eval.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commands/mute.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commands/unmute.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commands/warns.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/muteEvent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/botinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/botinfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/warn.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/warn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/setBio.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/setBio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/setLogsChannel.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/setLogsChannel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/setprefix.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/setprefix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/commandProcessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/commandProcessor.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +95,8 @@
       <workItem from="1605714957466" duration="5149000" />
       <workItem from="1605729873814" duration="2493000" />
       <workItem from="1605734293089" duration="1474000" />
-      <workItem from="1605772437541" duration="15084000" />
+      <workItem from="1605772437541" duration="16582000" />
+      <workItem from="1605801510380" duration="3150000" />
     </task>
     <servers />
   </component>

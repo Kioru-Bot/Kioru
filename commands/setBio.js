@@ -7,9 +7,7 @@ module.exports = {
     usage: "bio <текст>",
     aliases: ["био", "осебе"],
     execute(message, args) {
-        if (!args[0]) {
-            return message.channel.send("Укажите текст!");
-        }
+        if (!args[0]) return message.channel.send("Укажите текст!");
 
         return db
             .set(`${message.guild.id}_${message.author.id}`, "bio", args.join(" "))
