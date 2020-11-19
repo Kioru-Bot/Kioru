@@ -4,9 +4,9 @@ const config = require("../config.json")
 module.exports = {
     name: "prefix",
     category: "Утилиты",
-    description: "Информация о себе",
-    usage: "bio <текст>",
-    aliases: ["био", "осебе"],
+    description: "Установите свой перфикс на вашем сервере",
+    usage: "prefix <ваш префикс>",
+    aliases: ["префикс"],
     async execute(message, args) {
         if (!args[0]) {
             const prefix = await db.get(message.guild.id, "guild_settings_prefixes", config.prefix);
