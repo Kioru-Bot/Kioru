@@ -39,36 +39,20 @@ module.exports = {
         // if (user.id === message.author.id) return message.reply('суицид - не выход')
         if (user.id === client.user.id) return message.reply('нет.........')
 
-        let time = args.slice(1, 2)
+        let time = parseInt(args[1])
         let reason = args.slice(2).join(" ");
 
         if (!time) return await (message.reply("Укажите время"));
+        if (typeof time === "string") return  message.reply(this.usage)
         if (!reason) reason = "Не указана"
 
-        let timex = Date.now() + parseInt(time) * 1000
+        let timex = Date.now() + time * 1000
         let member = user.user.id
         return db.setmute(`${message.guild.id}`, "users_mute", member, timex)
             .then(() => {
                 user.roles.add(mutedRole, `Мьют`)
         }).then(() => {
-                message.react("✅"),
-                client.setInterval(async () => {
-                        try {
-                            let x = await db.getmute(`${message.guild.id}`, "users_mute", [])
-                            if (x.time <= 0) return
-                            let member = message.guild.members.cache.get(x.uid)
-                            let mutedRole = message.guild.roles.cache.find(mR => mR.name === "Kioru_Muted");
-                            if (Date.now() > x.time) {
-                                db.unmute(`${message.guild.id}`, "users_mute", x.uid, 0).then(
-                                    user.roles.remove(mutedRole),
-                                )
-                            }
-                            else return;
-                        }
-                        catch (e) {
-                            console.log(e)
-                        }
-                }, 5000);
+                message.react("✅")
             })
     }
 }
