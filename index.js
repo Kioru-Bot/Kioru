@@ -26,21 +26,21 @@ client.once('ready', () => {
         for (let i of client.guilds.cache.map(guild => guild.id)) {
             try {
                 let x = await db.getmute(`${i}`, "users_mute", [])
-                if (Date.now() > x.time) {
-                    if (x.time <= 0) return
-                    const g = client.guilds.cache.get(i)
-                    let member = g.members.cache.get(x.uid)
-                    let mutedRole = g.roles.cache.find(mR => mR.name === "Kioru_Muted");
-                    db.unmute(`${i}`, "users_mute", x.uid, 0).then(
-                        member.roles.remove(mutedRole),
-                    )
-                }
+                if (x.time <= 0) return
+                const g = client.guilds.cache.get(i)
+                let member = g.members.cache.get(x.uid)
+                let mutedRole = g.roles.cache.find(mR => mR.name === "Kioru_Muted");
+                if (Date.now() * 1000 > x.time) {
+                     db.unmute(`${i}`, "users_mute", x.uid, 0).then(
+                         member.roles.remove(mutedRole),
+                )}
+                else return;
             }
             catch (e) {
                 console.log(e)
             }
         }
-    }, 5000);
+    }, 60000);
 })
 
 

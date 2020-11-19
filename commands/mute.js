@@ -51,7 +51,24 @@ module.exports = {
             .then(() => {
                 user.roles.add(mutedRole, `Мьют`)
         }).then(() => {
-                message.react("✅")
+                message.react("✅"),
+                client.setInterval(async () => {
+                        try {
+                            let x = await db.getmute(`${message.guild.id}`, "users_mute", [])
+                            if (x.time <= 0) return
+                            let member = message.guild.members.cache.get(x.uid)
+                            let mutedRole = message.guild.roles.cache.find(mR => mR.name === "Kioru_Muted");
+                            if (Date.now() > x.time) {
+                                db.unmute(`${message.guild.id}`, "users_mute", x.uid, 0).then(
+                                    user.roles.remove(mutedRole),
+                                )
+                            }
+                            else return;
+                        }
+                        catch (e) {
+                            console.log(e)
+                        }
+                }, 5000);
             })
     }
 }
