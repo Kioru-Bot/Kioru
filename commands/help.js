@@ -11,7 +11,7 @@ module.exports = {
     hidden: false,
     category: 'Информация',
     async execute(message, args, client) {
-        const prefix = await db.get(message.guild.id, "prefix", config.prefix);
+        const prefix = await db.get(message.guild.id, "guild_settings_prefixes", config.prefix);
         const embed = new Discord.MessageEmbed()
             .setTitle('Справка по командам')
             .setColor(config.colors.main)

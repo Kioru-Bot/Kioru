@@ -79,6 +79,7 @@ module.exports = async (message, client) => {
         await command.execute(message, args, client);
     }
     catch (error) {
+        console.log(error)
         if (error instanceof Discord.DiscordAPIError) {
             return message.reply(
                 "При выполнении команды произошла API ошибка, выдайте права боту, или обратитесь на сервер поддержки (!бот)",

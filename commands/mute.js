@@ -39,6 +39,14 @@ module.exports = {
         }
         if(user.roles.cache.find(r => r.name === "Kioru_Muted")) return message.channel.send("Данный человек уже находится в мьюте!");
 
+        const author = message.guild.members.resolve(message.author.id);
+        if (author.roles.highest.position < user.roles.highest.position) {
+            return await message.reply("вы не можете замьютить человека который выше вас по роли!");
+        }
+        else if (author.roles.highest.position === user.roles.highest.position) {
+            return await message.reply("вы не можете замьютить человека который на одинаковой с вами роли!");
+        }
+
         if (!user) return await (message.reply("Укажите участника!"));
         if (user.id === message.author.id) return message.reply('суицид - не выход')
         if (user.id === client.user.id) return message.reply('нет.........')
