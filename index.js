@@ -49,9 +49,11 @@ client.on("message", async (message) => {
     await commandProcessor(message, client);
     for (let i of client.guilds.cache.map(guild => guild.id)) {
         try {
-            const g = client.guilds.cache.get(i)
+            const g = client.guilds.cache.get(i);
             let mutedRole = g.roles.cache.find(mR => mR.name === "Kioru_Muted");
-            if(message.member.roles.cache.find(r => r.name === "Kioru_Muted")) return message.delete()
+            if (message.member.roles === null) return;
+            if(message.member.roles.cache.find(r => r.name === "Kioru_Muted")) return message.delete();
+            else return;
         }
         catch (e) {
             console.error(e)

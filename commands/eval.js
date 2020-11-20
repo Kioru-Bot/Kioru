@@ -7,8 +7,10 @@ module.exports = {
     category: "Утилиты для сис. админов",
     description: "Зачем тебе оно?",
     usage: "Зачем тебе оно?",
+    hidden: true,
     aliases: ["евал", "ebal"],
     async execute(message, args) {
+    	if (message.author.id !== "622747295435456512") return;
         const embed = new Discord.MessageEmbed();
         let success = true;
         let result = "";
