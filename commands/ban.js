@@ -3,6 +3,12 @@ const getMember = require("../utils/getMember")
 module.exports = {
     name: "ban",
     execute(message, args) {
+
+        if (!message.guild.me.permissions.has("BAN_MEMBERS")) {
+            return message.reply(`мне нужны права на блокировку людей на этом сервере!`)
+        }
+
+
         const userId = getMember(args[0]);
 
         if (!userId) {
