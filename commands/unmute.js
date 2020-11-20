@@ -23,12 +23,9 @@ module.exports = {
         // if (user.id === message.author.id) return message.reply('суицид - не выход')
 
         try {
-            let x = await db.getmute(`${message.guild.id}`, "users_mute", [])
-            x = x[0]
-            if (!x || x.time <= 0) return
-            db.unmute(`${message.guild.id}`, "users_mute", x.uid, 0).then(
-                user.roles.remove(mutedRole))
-                message.react("✅")
+            user.roles.remove(mutedRole)
+            message.react("✅")
+            db.unmute(`${message.guild.id}`, "users_mute", user.id, 0)
         }
         catch (e) {
             console.error(e)
