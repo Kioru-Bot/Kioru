@@ -22,9 +22,13 @@ module.exports = {
 
         // if (user.id === message.author.id) return message.reply('суицид - не выход')
 
-        db.unmute(`${message.guild.id}`, "users_mute", user.id, 0).then(
-            user.roles.remove(mutedRole),
+        try {
+            user.roles.remove(mutedRole)
             message.react("✅")
-        )
+            db.unmute(`${message.guild.id}`, "users_mute", user.id, 0)
+        }
+        catch (e) {
+            console.error(e)
+        }
     }
 }

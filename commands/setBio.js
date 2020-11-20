@@ -10,7 +10,7 @@ module.exports = {
         if (!args[0]) return message.channel.send("Укажите текст!");
 
         return db
-            .set(`${message.guild.id}_${message.author.id}`, "bio", args.join(" "))
+            .set(`${message.guild.id}||${message.author.id}`, "bio", args.join(" "))
             .then(() => message.react("✅"));
     },
 };

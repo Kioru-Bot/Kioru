@@ -13,6 +13,10 @@ module.exports = {
         const userId = getMember(args[0]);
         const user = message.guild.members.resolve(userId);
         const author = message.guild.members.resolve(message.author.id);
+        if (!message.guild.me.permissions.has("KICK_MEMBERS")) {
+            return message.reply(`мне нужны права на кик пользователей!`)
+        }
+
 
         if (args[0] === undefined || !author) {
             return await message.reply("укажите пользователя!");

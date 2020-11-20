@@ -26,21 +26,22 @@ client.once('ready', () => {
         for (let i of client.guilds.cache.map(guild => guild.id)) {
             try {
                 let x = await db.getmute(`${i}`, "users_mute", [])
-                if (Date.now() > x.time) {
-                    if (x.time <= 0) return
+                x = x[0]
+                if (!x || x.time <= 0) return
                     const g = client.guilds.cache.get(i)
                     let member = g.members.cache.get(x.uid)
                     let mutedRole = g.roles.cache.find(mR => mR.name === "Kioru_Muted");
-                    db.unmute(`${i}`, "users_mute", x.uid, 0).then(
-                        member.roles.remove(mutedRole),
-                    )
-                }
+                    if (Date.now() >  x.time) {
+                     db.unmute(`${i}`, "users_mute", x.uid, 0).then(
+                         member.roles.remove(mutedRole),
+                    )}
+                else return
             }
             catch (e) {
                 console.log(e)
             }
         }
-    }, 5000);
+    }, 2500);
 })
 
 
@@ -48,9 +49,11 @@ client.on("message", async (message) => {
     await commandProcessor(message, client);
     for (let i of client.guilds.cache.map(guild => guild.id)) {
         try {
-            const g = client.guilds.cache.get(i)
+            const g = client.guilds.cache.get(i);
             let mutedRole = g.roles.cache.find(mR => mR.name === "Kioru_Muted");
-            if(message.member.roles.cache.find(r => r.name === "Kioru_Muted")) return message.delete()
+            if (message.member.roles === null) return;
+            if(message.member.roles.cache.find(r => r.name === "Kioru_Muted")) return message.delete();
+            else return;
         }
         catch (e) {
             console.error(e)

@@ -71,7 +71,7 @@ module.exports = {
 
         const collection = client.db("kioru").collection(key);
 
-        const toBeCached = await (collection.findOne({id: `${id}`}));
+        const toBeCached = await (collection.find().sort({time: 1}).toArray());
         if (!toBeCached) {
             return def;
         }
@@ -123,8 +123,10 @@ module.exports = {
 
         const client = await clientprom;
         const collection = client.db("kioru").collection(key);
-
-        collection.updateOne({ id }, { $set: { uid, time } }, { upsert: true });
+        if(await collection.findOne({id, uid: uid}) !== null) {
+            collection.updateOne({ id }, { $set: { uid, time } }, { upsert: true });
+        }
+        else collection.insertOne({ id, uid, time });
 
         return await (cache[key].set(`${id}`, uid, time));
     },
@@ -149,7 +151,7 @@ module.exports = {
         const client = await clientprom;
         const collection = client.db("kioru").collection(key);
 
-        collection.updateOne({ id }, { $set: { uid, time } }, { upsert: true });
+        collection.deleteOne({ id: id, uid: uid });
 
         return await (cache[key].set(`${id}`, uid, time));
     },
