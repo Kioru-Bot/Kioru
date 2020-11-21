@@ -5,7 +5,7 @@ const getMember = require("../utils/getMember.js");
 module.exports = {
     name: "avatar",
     category: 'Информация',
-    description: "Информация про юзера",
+    description: "Посмотреть аватар человека",
     aliases: ["аватар", "ава", "морда"],
     usage: "avatar [пинг юзера]",
     args: false,
