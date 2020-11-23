@@ -26,7 +26,7 @@ module.exports = {
             try {
                 mutedRole = await message.guild.roles.create({
                     data: {
-                        name: "Kioru_Muted",
+                        name: "KioruMuted",
                         color: "#757575",
                         permissions: []
                     },
@@ -40,6 +40,7 @@ module.exports = {
         }
 
         let role = message.guild.roles.cache.get(await db.get(message.guild.id, "guilds_mute_roles",  0))
+        if(!role) return message.reply("роли мута небыло создано, и я её создала.\nПропишите данную команду ещё один раз!")
 
         if(message.member.roles.cache.has(role.id)) return message.channel.send("Данный человек уже находится в мьюте!");
 

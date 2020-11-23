@@ -23,18 +23,19 @@ client.once('ready', () => {
     console.log(chalk.cyan(`[Kioru] logged in to Discord as ${client.user.tag} [${client.user.id}]`));
     client.user.setActivity('Wildways', { type: 'LISTENING' });
     client.setInterval(async () => {
-        for (let i of client.guilds.cache.map(guild => guild.id)) {
+        for (let i in client.guilds.cache.map(guild => guild.id)) {
             try {
                 let x = await db.getmute(`${i}`, "users_mute", [])
                 x = x[0]
                 if (!x || x.time <= 0) return
-                    const g = client.guilds.cache.get(i)
-                    let member = g.members.cache.get(x.uid)
-                    let mutedRole = g.roles.cache.find(mR => mR.name === "Kioru_Muted");
-                    if (Date.now() >  x.time) {
-                     db.unmute(`${i}`, "users_mute", x.uid, 0).then(
-                         member.roles.remove(mutedRole),
-                    )}
+                const g = client.guilds.cache.get(x.id)
+                let member = g.members.cache.get(x.uid)
+                if (await db.get(`${g.id}`, "guilds_mute_roles", 0) === 0) return
+                let role = g.roles.cache.get(await db.get(`${g.id}`, "guilds_mute_roles"))
+                if (Date.now() >  x.time) {
+                 db.unmute(`${i}`, "users_mute", x.uid, 0).then(
+                     member.roles.remove(role.id)
+                )}
                 else return
             }
             catch (e) {
@@ -52,10 +53,11 @@ client.on("message", async (message) => {
             const g = client.guilds.cache.get(i);
             let mutedRole = g.roles.cache.find(mR => mR.name === "Kioru_Muted");
 
+            if (!await db.get(message.guild.id, "guilds_mute_roles",  0) || await db.get(message.guild.id, "guilds_mute_roles",  0) === 0) return
             let role = message.guild.roles.cache.get(await db.get(message.guild.id, "guilds_mute_roles",  0))
 
             if (!role) return
-            if(message.member.roles.cache.has(role.id)) return message.delete();
+            if(message.member.roles.cache.has(`${role.id}`)) return message.delete();
             else return;
         }
         catch (e) {
