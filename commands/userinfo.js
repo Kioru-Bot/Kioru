@@ -33,22 +33,14 @@ module.exports = {
             nickname = user.nickname;
         }
 
-        // Чек статуса
-        if (user.presence.status === "online") {
-            status = "<:online:754673899320508416> Онлайн";
-        }
-        else if (user.presence.status === "idle") {
-            status = "<:idle:754673899362320424> Отошёл";
-        }
-        else if (user.presence.status === "dnd") {
-            status = "<:dnd:754673899102404649> Не беспокоить";
-        }
-        else if (user.presence.status === "offline") {
-            status = "<:offline:754673899324833812> Оффлайн";
-        }
-        else {
-            status = "Произошла ошибка!";
-        }
+        let statuses = {
+            online : "<:online:754673899320508416> Онлайн",
+            idle : "<:idle:754673899362320424> Отошёл",
+            dnd : "<:dnd:754673899102404649> Не беспокоить",
+            offline : "<:offline:754673899324833812> Оффлайн",
+        };
+
+        status = statuses[user.presence.status] ? statuses[user.presence.status] : 'Произошла ошибка!'
 
         const embed = new Discord.MessageEmbed()
             .setColor(config.colors.main)
