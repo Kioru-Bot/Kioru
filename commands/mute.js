@@ -21,7 +21,7 @@ module.exports = {
 
         const user = message.guild.members.cache.get(userId);
         if (!user) return message.reply("я не нашла данного человека...")
-        let mutedRole = message.guild.roles.cache.find(mR => mR.name === "Kioru_Muted");
+        let mutedRole = message.guild.roles.cache.find(mR => mR.name === "KioruMuted");
         if (!mutedRole) {
             try {
                 mutedRole = await message.guild.roles.create({
@@ -32,12 +32,16 @@ module.exports = {
                     },
                     reason: "Создана роль мьюта"
                 });
+                await db.set(message.guild.id, "guilds_mute_roles", mutedRole.id)
             }
             catch (e) {
                 return console.log(e)
             }
         }
-        if(user.roles.cache.find(r => r.name === "Kioru_Muted")) return message.channel.send("Данный человек уже находится в мьюте!");
+
+        let role = message.guild.roles.cache.get(await db.get(message.guild.id, "guilds_mute_roles",  0))
+
+        if(message.member.roles.cache.has(role.id)) return message.channel.send("Данный человек уже находится в мьюте!");
 
         const author = message.guild.members.resolve(message.author.id);
         if (author.roles.highest.position < user.roles.highest.position) {

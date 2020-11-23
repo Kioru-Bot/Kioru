@@ -51,8 +51,11 @@ client.on("message", async (message) => {
         try {
             const g = client.guilds.cache.get(i);
             let mutedRole = g.roles.cache.find(mR => mR.name === "Kioru_Muted");
-            if (!message.member.guild.roles) return;
-            if(message.member.guild.roles.cache.find(r => r.name === "Kioru_Muted")) return message.delete();
+
+            let role = message.guild.roles.cache.get(await db.get(message.guild.id, "guilds_mute_roles",  0))
+
+            if (!role) return
+            if(message.member.roles.cache.has(role.id)) return message.delete();
             else return;
         }
         catch (e) {
