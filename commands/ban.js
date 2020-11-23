@@ -21,12 +21,8 @@ module.exports = {
             return message.reply("укажите участника!");
         }
 
-        if (member.roles.highest.position >= message.member.roles.highest.position) {
+        if (member.roles.highest.position >= message.member.roles.highest.position || message.member.roles.highest.position === member.roles.highest.position) {
             return message.reply("вы не можете забанить этого участника!");
-        }
-
-        else if (message.author.roles.highest.position === member.roles.highest.position) {
-            return message.reply("вы не можете забанить человека который на одинаковой с вами роли!");
         }
 
         let reason = args.slice(1).join(" ");
