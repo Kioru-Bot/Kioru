@@ -51,7 +51,7 @@ client.on("message", async (message) => {
         try {
             const g = client.guilds.cache.get(i);
             let mutedRole = g.roles.cache.find(mR => mR.name === "Kioru_Muted");
-            if (message.member.roles === null) return;
+            if (!message.member.roles) return;
             if(message.member.roles.cache.find(r => r.name === "Kioru_Muted")) return message.delete();
             else return;
         }
