@@ -7,7 +7,6 @@ module.exports = {
     usage: "ранд <число>",
     args: false,
     async execute(message, args) {
-       //Нафиг тебе {} и await, если можно как ниже :sravedlivo:
         if (!args[0]) return message.reply("укажите цифру!");
         
         const num = args;
