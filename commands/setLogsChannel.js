@@ -6,7 +6,7 @@ module.exports = {
     category: "Модерация",
     description: "Установит канал логов",
     aliases: ["logs", "логи"],
-    usage: "setlog #пинг_канала",
+    usage: "setlog #пинг_канала (Укажите 0 если хотите убрать вовсе)",
     permissions: ["MANAGE_GUILD"],
     async execute(message, args) {
         if (args[0] === "0") {

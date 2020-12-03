@@ -6,6 +6,8 @@ const Discord = require("discord.js")
 const chalk = require("chalk")
 const commandProcessor = require("./utils/commandProcessor")
 const db = require("./utils/database")
+const SDC = require("@megavasiliy007/sdc-api");
+
 
 // Config
 const config = require("./config.json")
@@ -15,6 +17,10 @@ const client = new Discord.Client()
 client.commands = new Discord.Collection();
 client.modules = {};
 
+// SDC Client
+const sdclient = new SDC("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3ODI2NTI1NzUyODc4Njk5NSIsImlhdCI6MTYwNjE1Njk1OX0.DqCtC-aM-gjDLNr7t9IjOj0jLmVLS6d75Gn50nzu6vY");
+
+
 console.log(chalk.blue(fs.readFileSync("./Assets/banner.txt").toString() + "\n"));
 
 require("./utils/commandsLoader")(client);
@@ -22,6 +28,9 @@ require("./utils/commandsLoader")(client);
 client.once('ready', () => {
     console.log(chalk.cyan(`[Kioru] logged in to Discord as ${client.user.tag} [${client.user.id}]`));
     client.user.setActivity('Wildways', { type: 'LISTENING' });
+
+    sdclient.setAutoPost(client)
+
     client.setInterval(async () => {
         for (let i in client.guilds.cache.map(guild => guild.id)) {
             try {
@@ -33,13 +42,14 @@ client.once('ready', () => {
                 if (await db.get(`${g.id}`, "guilds_mute_roles", 0) === 0) return
                 let role = g.roles.cache.get(await db.get(`${g.id}`, "guilds_mute_roles"))
                 if (Date.now() >  x.time) {
-                 db.unmute(`${i}`, "users_mute", x.uid, 0).then(
+                 db.unmute(`${g.id}`, "users_mute", x.uid, 0).then(
                      member.roles.remove(role.id)
                 )}
                 else return
             }
             catch (e) {
-                console.log(e)
+                // Какой нахуй ошибка? Нету никакой ошибка
+                "";
             }
         }
     }, 2500);
@@ -54,7 +64,7 @@ client.on("message", async (message) => {
             let mutedRole = g.roles.cache.find(mR => mR.name === "Kioru_Muted");
 
             if (!await db.get(message.guild.id, "guilds_mute_roles",  0) || await db.get(message.guild.id, "guilds_mute_roles",  0) === 0) return
-            let role = message.guild.roles.cache.get(await db.get(message.guild.id, "guilds_mute_roles",  0))
+            let role = message.guild.roles.cache.get(await db.get(message.guild.id, "guilds_mute_roles"))
 
             if (!role) return
             if(message.member.roles.cache.has(`${role.id}`)) return message.delete();
@@ -80,6 +90,7 @@ console.log(chalk.gray(`[Kioru Boot] Bot booted in ${launchedTime - launchTime}m
 
 require("./events/logs")(client)
 require("./events/automoderation")(client)
+require("./events/expEvent")(client)
 
 client.login(config.token).then(() => {
     console.log(chalk.gray(`[Kioru] started and ready to go in ${new Date() - launchTime}ms`))

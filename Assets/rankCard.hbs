@@ -1,0 +1,49 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+
+<div class="ccard">
+    <img src="{{avatar}}" alt="avatar" class="aavatar">
+    <div class="text">
+        <h2>{{tag}}</h2>
+        <div class="whut">
+            <h3>Level: {{lvl}}</h3>
+            <h3>EXP: {{exp}}</h3>
+        </div>
+    </div>
+</div>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .ccard {
+        display: flex;
+        background-color: #222831;
+        width: 500px;
+        height: 115px;
+        padding: 15px;
+        border-radius: 10px;
+    }
+    .aavatar {
+        border: 3px solid #eeeeee;
+        border-radius: 50%;
+        max-width: 100px;
+        max-height: 100px;
+        box-shadow: 0 0 .5rem #babbbc
+    }
+    .text {
+        margin-top: 20px;
+        margin-left: 10px;
+        color: #f1f6f9;
+    }
+    .whut {
+        display: flex;
+        justify-content: space-between;
+    }
+    body{
+        width: 520px;
+        height: 135px;
+    }
+</style>
