@@ -28,8 +28,8 @@
   <component name="ChangeListManager">
     <list default="true" id="21a7c131-ae31-45b5-8d32-1f6951580b3c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/mute.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/mute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/rankCard.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/rankCard.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/userinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/userinfo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,9 +56,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
-    <property name="javascript.nodejs.core.library.typings.version" value="12.19.4" />
+    <property name="javascript.nodejs.core.library.configured.version" value="15.3.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.10" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -101,6 +102,8 @@
       <workItem from="1605995071687" duration="1020000" />
       <workItem from="1606119585789" duration="366000" />
       <workItem from="1606120223157" duration="5957000" />
+      <workItem from="1607009589651" duration="3382000" />
+      <workItem from="1607257877470" duration="546000" />
     </task>
     <servers />
   </component>
@@ -130,47 +133,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="262" y="178" width="1094" height="717" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605780245633">
-      <screen x="0" y="0" width="1618" height="1050" />
-    </state>
-    <state x="262" y="178" width="1094" height="717" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1618.1050@0.0.1618.1050" timestamp="1605780245633" />
-    <state x="526" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605707125739">
-      <screen x="0" y="0" width="1618" height="1050" />
-    </state>
-    <state x="526" y="325" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1618.1050@0.0.1618.1050" timestamp="1605707125739" />
-    <state x="538" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605774720617">
-      <screen x="0" y="0" width="1618" height="1050" />
-    </state>
-    <state x="538" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1618.1050@0.0.1618.1050" timestamp="1605774720617" />
-    <state x="823" y="426" key="FileChooserDialogImpl" timestamp="1605684723602">
-      <screen x="0" y="0" width="1618" height="1050" />
-    </state>
-    <state x="823" y="426" key="FileChooserDialogImpl/0.0.1618.1050@0.0.1618.1050" timestamp="1605684723602" />
-    <state x="294" y="169" key="SettingsEditor" timestamp="1605684736473">
-      <screen x="0" y="0" width="1618" height="1050" />
-    </state>
-    <state x="294" y="169" key="SettingsEditor/0.0.1618.1050@0.0.1618.1050" timestamp="1605684736473" />
-    <state x="461" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606122435482">
-      <screen x="0" y="0" width="1618" height="1050" />
-    </state>
-    <state x="461" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1618.1050@0.0.1618.1050" timestamp="1606122435482" />
-    <state x="562" y="396" width="965" height="553" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1605684734990">
-      <screen x="0" y="0" width="1618" height="1050" />
-    </state>
-    <state x="562" y="396" width="965" height="553" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1618.1050@0.0.1618.1050" timestamp="1605684734990" />
-    <state x="644" y="280" key="refactoring.ChangeSignatureDialog" timestamp="1605779219034">
-      <screen x="0" y="0" width="1618" height="1050" />
-    </state>
-    <state x="644" y="280" key="refactoring.ChangeSignatureDialog/0.0.1618.1050@0.0.1618.1050" timestamp="1605779219034" />
-    <state x="465" y="243" key="run.anything.popup" timestamp="1605776131105">
-      <screen x="0" y="0" width="1618" height="1050" />
-    </state>
-    <state x="465" y="243" key="run.anything.popup/0.0.1618.1050@0.0.1618.1050" timestamp="1605776131105" />
-    <state x="472" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1605730807373">
-      <screen x="0" y="0" width="1618" height="1050" />
-    </state>
-    <state x="472" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1618.1050@0.0.1618.1050" timestamp="1605730807373" />
   </component>
 </project>
