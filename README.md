@@ -1,12 +1,13 @@
+
 ![LogoKioru](https://github.com/Kioru-Bot/Kiuru-Bot/blob/main/KioruLogo.png)
-# Kioru Bot
+# Kiuru Bot
 
 Мультифункциональный Discord бот для вашего прекрасного сервера!
 
 # Установка
 Вписываем эти комманды в git терминал <br>
 ```bash
-git clone https://github.com/Kioru-Bot/Kioru
+git clone https://github.com/Kioru-Bot/Kiuru-Bot
 npm install
 ```
 <br> На вашем сервере должен быть установлен Docker
@@ -29,8 +30,6 @@ docker-compose up
     "successfully": "#8dc891"
   },
   "version": "1.0.0",
-  "copy": "Kioru Bot | Все права undefined..."
+  "copy": "Kiuru Bot | Все права undefined..."
 }
 ```
-
-

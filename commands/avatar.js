@@ -1,3 +1,4 @@
+
 const config = require("../config.json")
 const Discord = require("discord.js");
 const getMember = require("../utils/getMember.js");
@@ -5,7 +6,7 @@ const getMember = require("../utils/getMember.js");
 module.exports = {
     name: "avatar",
     category: 'Информация',
-    description: "Посмотреть аватар человека",
+    description: "Информация про юзера",
     aliases: ["аватар", "ава", "морда"],
     usage: "avatar [пинг юзера]",
     args: false,

@@ -17,15 +17,16 @@ module.exports = {
         if (!userId) return await (message.reply("Укажите участника!"));
 
         const user = message.guild.members.cache.get(userId);
-        let mutedRole = message.guild.roles.cache.find(mR => mR.name === "Kioru_Muted");
-        if(!user.roles.cache.find(r => r.name === "Kioru_Muted")) return message.channel.send("Данный человек не находится в мьюте!");
+
+        let role = message.guild.roles.cache.get(await db.get(message.guild.id, "guilds_mute_roles",  0))
+
+        if(!message.member.roles.cache.has(role.id)) return message.channel.send("Данный человек не находится в мьюте!!");
 
         // if (user.id === message.author.id) return message.reply('суицид - не выход')
 
         try {
-            user.roles.remove(mutedRole)
-            message.react("✅")
-            db.unmute(`${message.guild.id}`, "users_mute", user.id, 0)
+            await user.roles.remove(role).then(() => message.react("✅"))
+             return db.unmute(`${message.guild.id}`, "users_mute", user.id, 0)
         }
         catch (e) {
             console.error(e)

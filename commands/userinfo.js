@@ -10,7 +10,7 @@ module.exports = {
     aliases: ["юзер", "юзеринфо", "user"],
     usage: "userinfo",
     args: false,
-    async execute(message, args) {
+    async execute(message, args, client) {
         let id, nickname, status;
 
         const getMember = require("../utils/getMember.js");
@@ -24,14 +24,7 @@ module.exports = {
         /**
          * @type {Discord.GuildMember}
          */
-        const user = message.guild.members.resolve(id);
-
-        if (user.nickname == null) {
-            nickname = user.user.tag;
-        }
-        else {
-            nickname = user.nickname;
-        }
+        const user = message.guild.members.resolve(id)
 
         let statuses = {
             online : "<:online:754673899320508416> Онлайн",
@@ -40,11 +33,16 @@ module.exports = {
             offline : "<:offline:754673899324833812> Оффлайн",
         };
 
-        status = statuses[user.presence.status] ? statuses[user.presence.status] : 'Произошла ошибка!'
+        if (user.presence) status = statuses[user.presence.status] ?? "Произошла ошибка!"
+        else status = "Ошибка определения"
+
+        let usr
+        if (!user.user) usr = user
+        else usr = user.user
 
         const embed = new Discord.MessageEmbed()
             .setColor(config.colors.main)
-            .setTitle(`${nickname}`)
+            .setTitle(`${usr.tag}`)
             .setAuthor("Информация про пользователя")
             .setDescription(
                 await db.get(
@@ -61,7 +59,6 @@ module.exports = {
                         : "Ничего"
                 }`,
             })
-            .setFooter(`ID: ${user.id}`)
             .setThumbnail(user.user.avatarURL({dynamic: true, size: 1024}));
         message.channel.send(embed);
     },
