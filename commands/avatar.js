@@ -1,3 +1,4 @@
+
 const config = require("../config.json")
 const Discord = require("discord.js");
 const getMember = require("../utils/getMember.js");
