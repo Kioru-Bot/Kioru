@@ -27,11 +27,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21a7c131-ae31-45b5-8d32-1f6951580b3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/commands/hug.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/nekosController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/kiss.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/kiss.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +103,7 @@
       <workItem from="1606120223157" duration="5957000" />
       <workItem from="1607009589651" duration="3382000" />
       <workItem from="1607257877470" duration="1076000" />
-      <workItem from="1607418105426" duration="2432000" />
+      <workItem from="1607418105426" duration="2830000" />
     </task>
     <servers />
   </component>
