@@ -23,16 +23,14 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
         .setColor(config.colors.main)
-        .setTitle(`${message.guild.name}`)
-        .setAuthor("Информация про сервер")
-        .setDescription(`Информация про сервер ${message.guild.name}`)
-        .setThumbnail(message.guild.iconURL())
+         .setAuthor(`Информация про сервер ${message.guild.name}`,message.guild.iconURL())
+         .setThumbnail(message.guild.iconURL())
         .addFields(
             { name: "Информация:", value: `⏳ Сервер создан: ${message.guild.createdAt.toLocaleString()} \n👑 Создатель сервера: ${message.guild.owner} \n:globe_with_meridians: Регион: ${region}`, inline: true },
             { name: "Участники:", value: ` Всего участников: ${message.guild.members.cache.size} \n<:online:754673899320508416> В онлайне: ${online}, \n<:idle:754673899362320424> Отошли: ${idle}, \n<:dnd:754673899102404649> Не беспокоить: ${dnd}, \n<:offline:754673899324833812> Оффлайн: ${offline}`, inline: true },
             { name: "Каналы", value: `🧭 Всего каналов: ${message.guild.channels.cache.size}, \n📝 Текстовых каналов: ${text}, \n🔊 Голосовых каналов: ${voice}` },
         )
-        .setFooter(`${message.guild.id}`, client.user.avatarURL());
+        .setFooter(`ID: ${message.guild.id}`, client.user.avatarURL());
     message.channel.send(embed);
 },
 };
