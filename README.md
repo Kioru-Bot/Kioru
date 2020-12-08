@@ -1,3 +1,4 @@
+
 ![LogoKioru](https://github.com/Kioru-Bot/Kiuru-Bot/blob/main/KioruLogo.png)
 # Kiuru Bot
 
@@ -32,5 +33,3 @@ docker-compose up
   "copy": "Kiuru Bot | Все права undefined..."
 }
 ```
-
-
