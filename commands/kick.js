@@ -21,9 +21,9 @@ module.exports = {
         
         if (userId === message.author.id) return message.reply("вы не можете кикнуть самого себя!");
         
-        if (author.roles.highest.position < user.roles.highest.position) message.reply("вы не можете кикнуть человека который выше вас по роли!");
+        if (author.roles.highest.position < user.roles.highest.position) return message.reply("вы не можете кикнуть человека который выше вас по роли!");
         
-        else if (author.roles.highest.position === user.roles.highest.position) return message.reply("вы не можете кикнуть человека который на одинаковой с вами роли!");
+        if (author.roles.highest.position === user.roles.highest.position) return message.reply("вы не можете кикнуть человека который на одинаковой с вами роли!");
     
 
 
