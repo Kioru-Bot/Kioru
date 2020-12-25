@@ -18,7 +18,7 @@ client.commands = new Discord.Collection();
 client.modules = {};
 
 // SDC Client
-const sdclient = new SDC("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3ODI2NTI1NzUyODc4Njk5NSIsImlhdCI6MTYwNjE1Njk1OX0.DqCtC-aM-gjDLNr7t9IjOj0jLmVLS6d75Gn50nzu6vY");
+const sdclient = new SDC("");
 
 
 console.log(chalk.blue(fs.readFileSync("./Assets/banner.txt").toString() + "\n"));
