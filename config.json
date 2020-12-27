@@ -1,0 +1,14 @@
+{
+  "token": "Nzc4NzEyMjg2MzY1NjE0MDkw.X7V-VA.tgRXjcEsCnZL34xts_w9GNfjCvc",
+  "prefix": "$",
+  "mongo":  "mongodb+srv://enotkek3:goAuhLndwxO1jzws@nilitium.med4g.mongodb.net/KioruDB?retryWrites=true&w=majority",
+  "colors": {
+    "main": "#61dafb",
+    "warn": "#fac863",
+    "error": "#fc929e",
+    "successfully": "#8dc891"
+  },
+  "version": "1.4.0",
+  "copy": "Kioru Bot | Все права undefined...",
+  "cache": ""
+}
