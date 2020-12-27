@@ -37,7 +37,7 @@
     "node-html-to-image": "^3.0.1",
     "nodemon": "^2.0.6",
     "puppeteer": "^5.5.0"
-  }
+  },
   "engines": {
     "node": "15.3.0"
   }
