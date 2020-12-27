@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ."
+    "start": "node . port running"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kioru-Bot/Kiuru-Bot.git"
+    "url": "git+https://github.com/Kioru-Bot/Kioru.git"
   },
   "keywords": [
     "bot",
