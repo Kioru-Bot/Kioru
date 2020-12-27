@@ -17,9 +17,6 @@ const client = new Discord.Client()
 client.commands = new Discord.Collection();
 client.modules = {};
 
-// SDC Client
-const sdclient = new SDC("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3ODI2NTI1NzUyODc4Njk5NSIsImlhdCI6MTYwNjE1Njk1OX0.DqCtC-aM-gjDLNr7t9IjOj0jLmVLS6d75Gn50nzu6vY");
-
 
 console.log(chalk.blue(fs.readFileSync("./Assets/banner.txt").toString() + "\n"));
 
@@ -27,10 +24,8 @@ require("./utils/commandsLoader")(client);
 
 client.once('ready', () => {
     console.log(chalk.cyan(`[Kioru] logged in to Discord as ${client.user.tag} [${client.user.id}]`));
-    client.user.setActivity('Wildways', { type: 'LISTENING' });
-
-    sdclient.setAutoPost(client)
-
+    client.user.setActivity('Sabaton', { type: 'LISTENING' });
+    
     client.setInterval(async () => {
         for (let i in client.guilds.cache.map(guild => guild.id)) {
             try {
