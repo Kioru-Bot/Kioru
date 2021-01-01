@@ -36,10 +36,11 @@ module.exports = async (message, client) => {
         for (const perm of command.permissions) {
             num = num | Discord.Permissions.FLAGS[perm];
         }
-        if (!message.member.permissions.has(num)) {
-            if (!message.member.hasPermission("ADMINISTRATOR")) {
-                return message.reply('у вас недостаточно прав для этого!')
-            }
+        if (command.permissions) {
+            if (
+                !message.member.permissions.has(command.permissions)
+                && !message.member.permissions.has('ADMINISTRATOR')
+            ) return message.reply("Чумба ты совсем ебнутый?\nТебе прав не хватает")
         }
     }
     if (command.args && !args.length) {
@@ -89,7 +90,7 @@ module.exports = async (message, client) => {
     }
 
     console.log(
-        `Executed command ${commandName} by ${message.author.tag}(${message.author.id}) in guild ${message.guild.name}(${message.guild.id}) with following message(${message.id}): ${message.content}`,
+        `[Command Executor] Executed command ${commandName} by ${message.author.tag}(${message.author.id}) in guild ${message.guild.name}(${message.guild.id}) with following message(${message.id}): ${message.content}`,
         false,
     );
 }

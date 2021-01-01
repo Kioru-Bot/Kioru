@@ -2,29 +2,61 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 
 <div class="ccard">
-    <img src="{{avatar}}" alt="avatar" class="aavatar">
-    <div class="text">
-        <h2>{{tag}}</h2>
-        <div class="whut">
-            <h3>Level: {{lvl}}</h3>
-            <h3>EXP: {{exp}}</h3>
+    <div class="content">
+        <div class="flax">
+            <img src="{{avatar}}" alt="avatar" class="aavatar">
+            <div class="text">
+                <h2>{{tag}}</h2>
+                <div>
+                    <h4>Статус: {{memberStatus}}</h4>
+                </div>
+            </div>
+        </div>
+        <div class="gg whut">
+            <div class="her">
+                <h4>Уровень: {{memberLevel}}</h4>
+                <h4>Сообщений: {{memberTotalMessages}}</h4>
+            </div>
+            <div class="her">
+                <h4>EXP: {{memberTotalExp}}</h4>
+                <h4>Бутылок Вина: 0</h4>
+            </div>
         </div>
     </div>
 </div>
-
 <style>
     * {
         margin: 0;
         padding: 0;
         font-family: 'Montserrat', sans-serif;
     }
-    .ccard {
+    .her h4 {
+        margin-top: 10px;
+    }
+    .flax {
         display: flex;
-        background-color: #141414;
-        width: 500px;
-        height: 115px;
+    }
+    .gg {
+        margin-left: 120px;
+        color: white;
+        width: 400px;
+    }
+    .ccard {
+        background-image: url({{background}});
+        background-size: 100%;
+        background-position: right;
+        width: 756px;
+        height: 250px;
         padding: 15px;
         border-radius: 10px;
+    }
+    .content {
+        background: rgba(20, 20, 20, 0.5);
+        backdrop-filter: blur(3px);
+        border-radius: 15px;
+        padding: 15px;
+        margin-right: 30px;
+        margin-top: 25px;
     }
     .aavatar {
         border: 3px solid #eeeeee;
@@ -38,15 +70,13 @@
         margin-left: 10px;
         color: #f1f6f9;
     }
-    .text h2 {
-        color: #21D19F;
-    }
     .whut {
         display: flex;
         justify-content: space-between;
     }
     body{
-        width: 520px;
-        height: 135px;
+        width: 756px;
+        height: 270px;
+        margin: 0;
     }
 </style>
