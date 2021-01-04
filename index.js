@@ -90,7 +90,7 @@ console.log(chalk.gray(`[Boot Service] Bot booted in ${launchedTime - launchTime
 
 require("./events/logs")(client)
 require("./Services/Rating/MainService")(client)
-require("./Services/Emmet/EmmetRegisterService")(client)
+
 require("./events/HelloByeEvent")(client)
 
 client.login(config.token).then(() => {
