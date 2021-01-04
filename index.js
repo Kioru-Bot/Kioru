@@ -84,7 +84,6 @@ console.log(chalk.gray(`[Kioru Boot] Bot booted in ${launchedTime - launchTime}m
 
 
 require("./events/logs")(client)
-require("./events/automoderation")(client)
 require("./events/expEvent")(client)
 
 client.login(config.token).then(() => {
