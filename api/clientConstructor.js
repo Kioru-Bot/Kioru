@@ -8,7 +8,7 @@ class RAPI {
         this.app = express()
         this.app.use(cors())
         this.routes()
-        this.app.listen("80", () => {
+        this.app.listen(process.env.PORT || 3000, () => {
             console.log("[R.API] Successfully booted in http://localhost:3030")
         })
         this.app.get("/stats", ((req, res) => {
