@@ -18,6 +18,11 @@ class RAPI {
                 users: client.users.cache.size
             })
         }))
+        this.app.get("/guilds", ((req, res) => {
+            res.json({
+                guilds: client.guilds.cache.map(guild => guild.id),
+            })
+        }))
     }
 
     routes() {
