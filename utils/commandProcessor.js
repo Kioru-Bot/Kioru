@@ -44,7 +44,7 @@ module.exports = async (message, client) => {
         }
     }
     if (command.args && !args.length) {
-        let reply = `${message.author}!, вы дали неверные аргументы!`;
+        let reply = `${message.author}, ты ебнутый?`;
 
         if (command.usage) {
             reply += `\nПравильное использование: \`${prefix}${command.name} ${command.usage}\``;
@@ -67,7 +67,7 @@ module.exports = async (message, client) => {
         if (now < expiration) {
             const timeLeft = (expiration - now) / 1000;
             return message.reply(
-                `подождите еще ${timeLeft.toFixed(
+                `углепластик, охлади свое траханье ${timeLeft.toFixed(
                     1,
                 )} секунд перед использование команды \`${command.name}\`!`,
             );
@@ -83,10 +83,10 @@ module.exports = async (message, client) => {
         console.log(error)
         if (error instanceof Discord.DiscordAPIError) {
             return message.reply(
-                "При выполнении команды произошла API ошибка, выдайте права боту, или обратитесь на сервер поддержки (!бот)",
+                "Пизда рулю, меняй колеса. Пиздец всему, Вася.... Звони Ахмеду (!бот)",
             );
         }
-        message.reply("произошла ошибка во время запуска команды!");
+        message.reply("не все так просто, мой программист далбаеб, и написал НИХУЯ не рабочий код");
     }
 
     console.log(
