@@ -36,12 +36,12 @@ module.exports = {
             .toString();
         const template = Handlebars.compile(templateContent);
 
-        let bg = "https://cdn.discordapp.com/attachments/778266278040961046/794978479153872946/nekoha-Shizuku-Animal-Ears-Anime-nekomimi-5672177.png"
+        let bg;
 
-        /* await db.get(`${message.guild.id}_${message.member.id}`, "users_card_background", "https://cdn.discordapp.com/attachments/778266278040961046/792727722312204308/unnamed_2.jpg")
+        await db.get(`${message.guild.id}_${message.member.id}`, "users_card_background", "https://cdn.discordapp.com/attachments/778266278040961046/792727722312204308/unnamed_2.jpg")
         if (bg !== "https://cdn.discordapp.com/attachments/778266278040961046/792727722312204308/unnamed_2.jpg") {
             bg = await getBg(bg)
-        } */
+        }
         const ctx = {
             avatar: user.avatarURL(),
             tag: user.tag,
