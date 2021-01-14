@@ -13,7 +13,15 @@ const SDC = require("@megavasiliy007/sdc-api");
 const config = require("./config.json")
 
 // Discord Client
-const client = new Discord.Client()
+const client = new Discord.Client({ 
+    ws: { 
+        intents: new Discord.Intents(Discord.Intents.ALL)
+    }
+      fetchAllMembers: true,
+      messageCacheMaxSize: 1000,
+      messageCacheLifetime: 30,
+      messageSweepInterval: 60,    
+    })
 client.commands = new Discord.Collection();
 client.modules = {};
 
