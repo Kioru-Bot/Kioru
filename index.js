@@ -13,12 +13,20 @@ const SDC = require("@megavasiliy007/sdc-api");
 const config = require("./config.json")
 
 // Discord Client
-const client = new Discord.Client()
+const client = new Discord.Client({ 
+    ws: { 
+        intents: new Discord.Intents(Discord.Intents.ALL)
+    }
+      fetchAllMembers: true,
+      messageCacheMaxSize: 1000,
+      messageCacheLifetime: 30,
+      messageSweepInterval: 60,    
+    })
 client.commands = new Discord.Collection();
 client.modules = {};
 
 // SDC Client
-const sdclient = new SDC("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3ODI2NTI1NzUyODc4Njk5NSIsImlhdCI6MTYwNjE1Njk1OX0.DqCtC-aM-gjDLNr7t9IjOj0jLmVLS6d75Gn50nzu6vY");
+const sdclient = new SDC("");
 
 
 console.log(chalk.blue(fs.readFileSync("./Assets/banner.txt").toString() + "\n"));
@@ -26,7 +34,7 @@ console.log(chalk.blue(fs.readFileSync("./Assets/banner.txt").toString() + "\n")
 require("./utils/commandsLoader")(client);
 
 client.once('ready', () => {
-    console.log(chalk.cyan(`[Kioru] logged in to Discord as ${client.user.tag} [${client.user.id}]`));
+    console.log(chalk.cyan(`[Boot Service] logged in to Discord as ${client.user.tag} [${client.user.id}]`));
     client.user.setActivity('Wildways', { type: 'LISTENING' });
 
     sdclient.setAutoPost(client)
@@ -85,13 +93,19 @@ client.on("messageUpdate", async (_, newMsg) => {
 
 const launchedTime = new Date();
 
-console.log(chalk.gray(`[Kioru Boot] Bot booted in ${launchedTime - launchTime}ms`));
+console.log(chalk.gray(`[Boot Service] Bot booted in ${launchedTime - launchTime}ms`));
 
 
 require("./events/logs")(client)
-require("./events/automoderation")(client)
-require("./events/expEvent")(client)
+require("./Services/Rating/MainService")(client)
+
+require("./events/HelloByeEvent")(client)
 
 client.login(config.token).then(() => {
-    console.log(chalk.gray(`[Kioru] started and ready to go in ${new Date() - launchTime}ms`))
+    console.log(chalk.gray(`[Kioru Service] started and ready to go in ${new Date() - launchTime}ms`))
 });
+
+module.exports = client
+
+const ti_pidor = require("./api/clientConstructor")
+new ti_pidor(client)

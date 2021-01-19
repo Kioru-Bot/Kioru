@@ -9,7 +9,7 @@ module.exports = {
     usage: "Зачем тебе оно?",
     hidden: true,
     aliases: ["евал", "ebal"],
-    async execute(message, args) {
+    async execute(message, args, client) {
     	if (message.author.id !== "622747295435456512") return;
         const embed = new Discord.MessageEmbed();
         let success = true;
@@ -37,7 +37,7 @@ module.exports = {
             embed.setTitle("Произошла ошибка!")
             embed.addField("Ошибка:", "```js\n" + error + "\n" + error.stack + "```")
         }
-        embed.setFooter(`Исполнено за ${start - end}`)
+        embed.setFooter(`Исполнено за ${start - end} ms`)
         message.channel.send(embed).then(() => {
             message.channel.send(result)
         })

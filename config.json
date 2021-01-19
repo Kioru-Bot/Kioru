@@ -1,0 +1,14 @@
+{
+  "token": "",
+  "prefix": "!",
+  "mongo":  "",
+  "colors": {
+    "main": "#61dafb",
+    "warn": "#fac863",
+    "error": "#fc929e",
+    "successfully": "#8dc891"
+  },
+  "version": "1.4.1",
+  "copy": "Kioru Bot | Все права undefined...",
+  "cache": ""
+}

@@ -36,14 +36,15 @@ module.exports = async (message, client) => {
         for (const perm of command.permissions) {
             num = num | Discord.Permissions.FLAGS[perm];
         }
-        if (!message.member.permissions.has(num)) {
-            if (!message.member.hasPermission("ADMINISTRATOR")) {
-                return message.reply('у вас недостаточно прав для этого!')
-            }
+        if (command.permissions) {
+            if (
+                !message.member.permissions.has(command.permissions)
+                && !message.member.permissions.has('ADMINISTRATOR')
+            ) return message.reply("Чумба ты совсем ебнутый?\nТебе прав не хватает")
         }
     }
     if (command.args && !args.length) {
-        let reply = `${message.author}!, вы дали неверные аргументы!`;
+        let reply = `${message.author}, ты ебнутый?`;
 
         if (command.usage) {
             reply += `\nПравильное использование: \`${prefix}${command.name} ${command.usage}\``;
@@ -66,7 +67,7 @@ module.exports = async (message, client) => {
         if (now < expiration) {
             const timeLeft = (expiration - now) / 1000;
             return message.reply(
-                `подождите еще ${timeLeft.toFixed(
+                `углепластик, охлади свое траханье ${timeLeft.toFixed(
                     1,
                 )} секунд перед использование команды \`${command.name}\`!`,
             );
@@ -82,14 +83,14 @@ module.exports = async (message, client) => {
         console.log(error)
         if (error instanceof Discord.DiscordAPIError) {
             return message.reply(
-                "При выполнении команды произошла API ошибка, выдайте права боту, или обратитесь на сервер поддержки (!бот)",
+                "Пизда рулю, меняй колеса. Пиздец всему, Вася.... Звони Ахмеду (!бот)",
             );
         }
-        message.reply("произошла ошибка во время запуска команды!");
+        message.reply("Произошла ошибка... Найдите моего автора и убейте его");
     }
 
     console.log(
-        `Executed command ${commandName} by ${message.author.tag}(${message.author.id}) in guild ${message.guild.name}(${message.guild.id}) with following message(${message.id}): ${message.content}`,
+        `[Command Executor] Executed command ${commandName} by ${message.author.tag}(${message.author.id}) in guild ${message.guild.name}(${message.guild.id}) with following message(${message.id}): ${message.content}`,
         false,
     );
 }
