@@ -1,6 +1,7 @@
 const express = require("express")
 const stats = require("./FUCK_YOU")
 const cors = require("cors")
+const port = process.env.PORT || 3000
 
 class RAPI {
     constructor(client) {
@@ -8,8 +9,8 @@ class RAPI {
         this.app = express()
         this.app.use(cors())
         this.routes()
-        this.app.listen(process.env.PORT || 3000, () => {
-            console.log("[R.API] Successfully booted in http://localhost:3030")
+        this.app.listen(port, () => {
+            console.log(`[R.API] Successfully booted in http://localhost:${port}`)
         })
         this.app.get("/stats", ((req, res) => {
             res.json({
