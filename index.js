@@ -69,7 +69,6 @@ client.on("message", async (message) => {
     for (let i of client.guilds.cache.map(guild => guild.id)) {
         try {
             const g = client.guilds.cache.get(i);
-            let mutedRole = g.roles.cache.find(mR => mR.name === "Kioru_Muted");
 
             if (!await db.get(message.guild.id, "guilds_mute_roles",  0) || await db.get(message.guild.id, "guilds_mute_roles",  0) === 0) return
             let role = message.guild.roles.cache.get(await db.get(message.guild.id, "guilds_mute_roles"))
