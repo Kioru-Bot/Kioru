@@ -3,7 +3,7 @@ const stats = require("./FUCK_YOU")
 const cors = require("cors")
 const port = process.env.PORT || 3000
 
-class RAPI {
+class RAPE {
     constructor(client) {
         this.client = client
         this.app = express()
