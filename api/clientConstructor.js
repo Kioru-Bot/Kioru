@@ -31,4 +31,4 @@ class RAPE {
     }
 
 }
-module.exports = RAPI
+module.exports = RAPE
